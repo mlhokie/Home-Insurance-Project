@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Home Insurance</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+<div class="container body-content"></div>
+<div class="form-horizontal">
+    <img class="center-image" src="~/Content/images/HomeOwnersLogo.jpg"/> @*Added Logo and name instead of just name*@
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @*<h1 class="shared-text">Homeowners Insurance</h1>*@
+    @Html.Partial("NavBar")
+    <hr class="underline-border"/>
+    <h3 class="shared-text">@ViewBag.PageTitle</h3>
+    <div class="body-padding">
+        @RenderBody()
+    </div>
+    <hr class="underline-border"/>
+    <footer>
+        @*Added this line to allow customers to contact Sales if they have any issues or need to speak to a person*@
+        <p class="shared-text">NEED &nbsp;TO &nbsp;SPEAK &nbsp;WITH &nbsp;US? &emsp;You &nbsp;can &nbsp;reach &nbsp;a &nbsp;Homeowners &nbsp;Insurance &nbsp;Sales &nbsp;Agent &nbsp;at: &nbsp;(800)-GET-QUOTE</p>
+        <p class="shared-text">Copyright &copy; @DateTime.Now.Year &nbsp;Homeownersinsurance.com &nbsp;All Rights Reserved</p> @*Added "s" to URL*@
+    </footer>
+</div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
